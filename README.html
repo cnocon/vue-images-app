@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>images</title>
+        <style>
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension bierner.markdown-preview-github-styles */
+body {
+    background: white;
+}
+
+.vscode-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid transparent;
+}
+
+.vscode-body blockquote {
+    background-color: initial;
+}
+
+.vscode-body pre {
+    color: initial;
+    background: #f7f7f7 !important;
+}
+
+.vscode-body code {
+    color: inherit;
+}
+
+.vscode-body pre code {
+    color: initial;
+}
+
+.vscode-body code > div {
+    background: none
+}
+
+.vscode-body table th,
+.vscode-body table td {
+    border: 1px solid #ddd !important;
+}
+
+.vscode-body.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-body.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-body.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-body p,
+.vscode-body blockquote,
+.vscode-body ul,
+.vscode-body ol,
+.vscode-body dl,
+.vscode-body table,
+.vscode-body pre {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+body.vscode-body::-webkit-scrollbar {
+    background-color: white;
+}
+body.vscode-body::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.4);
+}
+body.vscode-body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(100, 100, 100, 0.7);
+}
+
+/* Generated from 'node_modules/github-markdown-css/github-markdown.css' */
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.vscode-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.vscode-body .pl-c {
+  color: #6a737d;
+}
+
+.vscode-body .pl-c1,
+.vscode-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.vscode-body .pl-e,
+.vscode-body .pl-en {
+  color: #6f42c1;
+}
+
+.vscode-body .pl-smi,
+.vscode-body .pl-s .pl-s1 {
+  color: #24292e;
+}
+
+.vscode-body .pl-ent {
+  color: #22863a;
+}
+
+.vscode-body .pl-k {
+  color: #d73a49;
+}
+
+.vscode-body .pl-s,
+.vscode-body .pl-pds,
+.vscode-body .pl-s .pl-pse .pl-s1,
+.vscode-body .pl-sr,
+.vscode-body .pl-sr .pl-cce,
+.vscode-body .pl-sr .pl-sre,
+.vscode-body .pl-sr .pl-sra {
+  color: #032f62;
+}
+
+.vscode-body .pl-v,
+.vscode-body .pl-smw {
+  color: #e36209;
+}
+
+.vscode-body .pl-bu {
+  color: #b31d28;
+}
+
+.vscode-body .pl-ii {
+  color: #fafbfc;
+  background-color: #b31d28;
+}
+
+.vscode-body .pl-c2 {
+  color: #fafbfc;
+  background-color: #d73a49;
+}
+
+.vscode-body .pl-c2::before {
+  content: "^M";
+}
+
+.vscode-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #22863a;
+}
+
+.vscode-body .pl-ml {
+  color: #735c0f;
+}
+
+.vscode-body .pl-mh,
+.vscode-body .pl-mh .pl-en,
+.vscode-body .pl-ms {
+  font-weight: bold;
+  color: #005cc5;
+}
+
+.vscode-body .pl-mi {
+  font-style: italic;
+  color: #24292e;
+}
+
+.vscode-body .pl-mb {
+  font-weight: bold;
+  color: #24292e;
+}
+
+.vscode-body .pl-md {
+  color: #b31d28;
+  background-color: #ffeef0;
+}
+
+.vscode-body .pl-mi1 {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+.vscode-body .pl-mc {
+  color: #e36209;
+  background-color: #ffebda;
+}
+
+.vscode-body .pl-mi2 {
+  color: #f6f8fa;
+  background-color: #005cc5;
+}
+
+.vscode-body .pl-mdr {
+  font-weight: bold;
+  color: #6f42c1;
+}
+
+.vscode-body .pl-ba {
+  color: #586069;
+}
+
+.vscode-body .pl-sg {
+  color: #959da5;
+}
+
+.vscode-body .pl-corl {
+  text-decoration: underline;
+  color: #032f62;
+}
+
+.vscode-body .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+.vscode-body a {
+  background-color: transparent;
+}
+
+.vscode-body a:active,
+.vscode-body a:hover {
+  outline-width: 0;
+}
+
+.vscode-body strong {
+  font-weight: inherit;
+}
+
+.vscode-body strong {
+  font-weight: bolder;
+}
+
+.vscode-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.vscode-body img {
+  border-style: none;
+}
+
+.vscode-body code,
+.vscode-body kbd,
+.vscode-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.vscode-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.vscode-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.vscode-body input {
+  overflow: visible;
+}
+
+.vscode-body [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.vscode-body * {
+  box-sizing: border-box;
+}
+
+.vscode-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.vscode-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.vscode-body a:hover {
+  text-decoration: underline;
+}
+
+.vscode-body strong {
+  font-weight: 600;
+}
+
+.vscode-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.vscode-body hr::before {
+  display: table;
+  content: "";
+}
+
+.vscode-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.vscode-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.vscode-body td,
+.vscode-body th {
+  padding: 0;
+}
+
+.vscode-body h1,
+.vscode-body h2,
+.vscode-body h3,
+.vscode-body h4,
+.vscode-body h5,
+.vscode-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.vscode-body h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.vscode-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.vscode-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.vscode-body h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vscode-body h6 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vscode-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.vscode-body blockquote {
+  margin: 0;
+}
+
+.vscode-body ul,
+.vscode-body ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body ol ol,
+.vscode-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.vscode-body ul ul ol,
+.vscode-body ul ol ol,
+.vscode-body ol ul ol,
+.vscode-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.vscode-body dd {
+  margin-left: 0;
+}
+
+.vscode-body code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.vscode-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.vscode-body .octicon {
+  vertical-align: text-bottom;
+}
+
+.vscode-body .pl-0 {
+  padding-left: 0 !important;
+}
+
+.vscode-body .pl-1 {
+  padding-left: 4px !important;
+}
+
+.vscode-body .pl-2 {
+  padding-left: 8px !important;
+}
+
+.vscode-body .pl-3 {
+  padding-left: 16px !important;
+}
+
+.vscode-body .pl-4 {
+  padding-left: 24px !important;
+}
+
+.vscode-body .pl-5 {
+  padding-left: 32px !important;
+}
+
+.vscode-body .pl-6 {
+  padding-left: 40px !important;
+}
+
+.vscode-body::before {
+  display: table;
+  content: "";
+}
+
+.vscode-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.vscode-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.vscode-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.vscode-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vscode-body .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.vscode-body .anchor:focus {
+  outline: none;
+}
+
+.vscode-body p,
+.vscode-body blockquote,
+.vscode-body ul,
+.vscode-body ol,
+.vscode-body dl,
+.vscode-body table,
+.vscode-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.vscode-body hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+.vscode-body blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.vscode-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.vscode-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.vscode-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+}
+
+.vscode-body h1,
+.vscode-body h2,
+.vscode-body h3,
+.vscode-body h4,
+.vscode-body h5,
+.vscode-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.vscode-body h1 .octicon-link,
+.vscode-body h2 .octicon-link,
+.vscode-body h3 .octicon-link,
+.vscode-body h4 .octicon-link,
+.vscode-body h5 .octicon-link,
+.vscode-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.vscode-body h1:hover .anchor,
+.vscode-body h2:hover .anchor,
+.vscode-body h3:hover .anchor,
+.vscode-body h4:hover .anchor,
+.vscode-body h5:hover .anchor,
+.vscode-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.vscode-body h1:hover .anchor .octicon-link,
+.vscode-body h2:hover .anchor .octicon-link,
+.vscode-body h3:hover .anchor .octicon-link,
+.vscode-body h4:hover .anchor .octicon-link,
+.vscode-body h5:hover .anchor .octicon-link,
+.vscode-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.vscode-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.vscode-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eaecef;
+}
+
+.vscode-body h3 {
+  font-size: 1.25em;
+}
+
+.vscode-body h4 {
+  font-size: 1em;
+}
+
+.vscode-body h5 {
+  font-size: 0.875em;
+}
+
+.vscode-body h6 {
+  font-size: 0.85em;
+  color: #6a737d;
+}
+
+.vscode-body ul,
+.vscode-body ol {
+  padding-left: 2em;
+}
+
+.vscode-body ul ul,
+.vscode-body ul ol,
+.vscode-body ol ol,
+.vscode-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vscode-body li {
+  word-wrap: break-all;
+}
+
+.vscode-body li>p {
+  margin-top: 16px;
+}
+
+.vscode-body li+li {
+  margin-top: 0.25em;
+}
+
+.vscode-body dl {
+  padding: 0;
+}
+
+.vscode-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.vscode-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.vscode-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.vscode-body table th {
+  font-weight: 600;
+}
+
+.vscode-body table th,
+.vscode-body table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.vscode-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.vscode-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.vscode-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.vscode-body img[align=right] {
+  padding-left: 20px;
+}
+
+.vscode-body img[align=left] {
+  padding-right: 20px;
+}
+
+.vscode-body code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+.vscode-body pre {
+  word-wrap: normal;
+}
+
+.vscode-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.vscode-body .highlight {
+  margin-bottom: 16px;
+}
+
+.vscode-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.vscode-body .highlight pre,
+.vscode-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+.vscode-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.vscode-body .full-commit .btn-outline:not(:disabled):hover {
+  color: #005cc5;
+  border-color: #005cc5;
+}
+
+.vscode-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+}
+
+.vscode-body :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #0366d6;
+}
+
+.vscode-body .task-list-item {
+  list-style-type: none;
+}
+
+.vscode-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.vscode-body .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.vscode-body hr {
+  border-bottom-color: #eee;
+}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="images">images</h1>
+<h2 id="project-setup">Project setup</h2>
+<pre><code><code><div>npm install
+</div></code></code></pre>
+<h3 id="compiles-and-hot-reloads-for-development">Compiles and hot-reloads for development</h3>
+<pre><code><code><div>npm run serve
+</div></code></code></pre>
+<h3 id="compiles-and-minifies-for-production">Compiles and minifies for production</h3>
+<pre><code><code><div>npm run build
+</div></code></code></pre>
+<h3 id="lints-and-fixes-files">Lints and fixes files</h3>
+<pre><code><code><div>npm run lint
+</div></code></code></pre>
+<h3 id="customize-configuration">Customize configuration</h3>
+<p>See <a href="https://cli.vuejs.org/config/">Configuration Reference</a>.</p>
+<h1 id="course-notes">Course Notes</h1>
+<p><strong>Vue Modules</strong><br>
+Due to using a single state tree, all states of our application are contained inside one big object. However, as our application grows in scale, the store can get really bloated.</p>
+<p>To help with that, Vuex allows us to divide our store into modules. Each module can contain its own state, mutations, actions, getters, and even nested modules - it's fractal all the way down:</p>
+<pre><code class="language-js"><div><span class="hljs-keyword">const</span> moduleA = {
+  <span class="hljs-attr">state</span>: <span class="hljs-function">() =&gt;</span> ({ ... }),
+  <span class="hljs-attr">mutations</span>: { ... },
+  <span class="hljs-attr">actions</span>: { ... },
+  <span class="hljs-attr">getters</span>: { ... }
+}
+
+<span class="hljs-keyword">const</span> moduleB = {
+  <span class="hljs-attr">state</span>: <span class="hljs-function">() =&gt;</span> ({ ... }),
+  <span class="hljs-attr">mutations</span>: { ... },
+  <span class="hljs-attr">actions</span>: { ... }
+}
+
+<span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vuex.Store({
+  <span class="hljs-attr">modules</span>: {
+    <span class="hljs-attr">a</span>: moduleA,
+    <span class="hljs-attr">b</span>: moduleB
+  }
+})
+
+store.state.a <span class="hljs-comment">// -&gt; `moduleA`&#x27;s state</span>
+store.state.b <span class="hljs-comment">// -&gt; `moduleB`&#x27;s state</span>
+</div></code></pre>
+<h2 id="auth-module">Auth Module</h2>
+<p>Knowing wehether user is signed in; signing user in, and logging them out</p>
+<h2 id="image-module">Image Module</h2>
+<p>All code and data relate dto handling images; e.g. fetching all uploaded images and uploading images themselves as well</p>
+<h2 id="89-vuex-modules"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229916#overview">89. Vuex Modules</a></h2>
+<p>Let's consider a <strong>Car Inventory module</strong>:</p>
+<p><strong>Modules contain 4 different portions, each with a distinct purpose for managing data inside of our application:</strong></p>
+<ul>
+<li>STATE
+<ul>
+<li>Holds all raw data related to this particular module.</li>
+<li>Ex: All cars in the inventory</li>
+</ul>
+</li>
+<li>GETTERS
+<ul>
+<li>To narrow down records via filtering/computations (return a subset)</li>
+<li>Or run a computation like getNumberOfCars or something; they odn't have to just be used for filtering; can be used for any type of operation we want to do on our records inside state</li>
+<li>Ex: All <code>budget</code> cars in the inventory</li>
+<li>Ex: Count of all cars in the inventory</li>
+</ul>
+</li>
+<li>ACTIONS
+<ul>
+<li>Function that assembles together multiple mutations in a series</li>
+<li>It doesn't necessarily have to call multiple mutations though; it can just do one thing/action results in one single mutation</li>
+<li>E.g. <code>sellCar</code> includes <code>setCarAsSold</code>, <code>washCar</code> and <code>billCustomer</code></li>
+</ul>
+</li>
+<li>MUTATIONS
+<ul>
+<li>Very explicit individual, SINGLE-STEP functions that act on our state object in which you and I would want to change th data stored in our state.</li>
+<li>Ex: <code>wash the chevy volt</code>, <code>recieve new Honda Accord into inventory</code>, or <code>sell Dodge Durango</code></li>
+<li>Ex: <code>setCarAsSold</code>, <code>addCarToInventory</code>, <code>washCar</code>, <code>billCustomer</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="90-connecting-vuex-to-vue"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229918#notes">90. Connecting Vuex to Vue</a></h2>
+<p>The <code>/src/store</code> directory will contain all of our Vuex related code.</p>
+<p>The <code>/src/store/index.js</code> file is where the initial Vuex setup happens.</p>
+<p><em>/src/store/index.js</em></p>
+<pre><code class="language-js"><div><span class="hljs-comment">// Initial setup of Vuex will take place</span>
+<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span>;
+<span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;
+
+<span class="hljs-comment">// This line wires the two libraries together so they know about each other; then in /src/store/index.js are the instructions on HOW these two work together</span>
+Vue.use(Vuex);
+
+<span class="hljs-comment">// Store is a term for overall collection of all of our modules assembled together that can be interfaced with Vue code we write</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vuex.Store({
+  <span class="hljs-attr">modules</span>: {
+
+  }
+});
+</div></code></pre>
+<p><em>/src/main.js</em></p>
+<pre><code class="language-js"><div><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App&#x27;</span>;
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./store&#x27;</span>;
+
+<span class="hljs-keyword">new</span> Vue({
+  store,
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> h(App)
+}).$mount(<span class="hljs-string">&#x27;#app&#x27;</span>);
+</div></code></pre>
+<h2 id="91-initial-auth-module-design-and-92-auth-module-mutations"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229922#notes">91. Initial Auth Module Design</a> and <a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229924#notes">92. Auth Module Mutations</a></h2>
+<p><strong>Auth Module Architecture:</strong></p>
+<h3 id="state">State</h3>
+<ul>
+<li><code>token</code> we get from authentication process (initial value is <code>null</code>)</li>
+</ul>
+<h3 id="getters">Getters</h3>
+<ul>
+<li><code>isLoggedIn</code> - look at value of token in the state object</li>
+</ul>
+<h3 id="mutations">Mutations</h3>
+<ul>
+<li><code>setToken</code> intended to update value of token property inside state object</li>
+</ul>
+<h3 id="actions-call-a-mutation-at-particular-time-or-multiple-mutations-in-a-particular-order">Actions (call a mutation at particular time or multiple mutations in a particular order)</h3>
+<ul>
+<li>
+<p><code>finalizeLogin</code> -&gt; somehow gets token provided to us by imgur and calls the <code>setToken</code> mutation to update the value of token</p>
+</li>
+<li>
+<p><code>logout</code> -&gt; calls <code>setToken</code> and makes it null</p>
+</li>
+<li>
+<p><code>login</code> -&gt; kick off initial OAuth flow to Imgur API. It's a littel different because it doesn't call a mutation</p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229928#notes">93. Auth module state and getters</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229932#notes">94. Updating State Values</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229934#notes">95. Logging Out with Actions</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229938#notes">96. Separate API Helpers</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229942#notes">97. Forming the OAuth2 URL</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229946#notes">98. Initiating the Login Flow</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229950#notes">99. Wiring the Auth Module</a></p>
+</li>
+</ul>
+<h2 id="100-initial-oauth-request"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229952#notes">100. Initial OAuth Request</a></h2>
+<ul>
+<li>
+<p>wire up a getter to a component to retrieve data</p>
+</li>
+<li>
+<p>wire up an action to a component to set data</p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229960#notes">102. Wiring Up Vue Router</a></p>
+</li>
+</ul>
+<h2 id="103-browser-vs-hash-routers"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229962#notes">103. Browser vs. Hash Routers</a></h2>
+<ul>
+<li>
+<p>A hash router in Vue means Vue looks for everything to the right of a '#' to determine what to do/what route is being used/what set of components to show on the screen</p>
+</li>
+<li>
+<p>The hash router is the default setting</p>
+</li>
+<li>
+<p>For our purposes we actually need the browser router option instead, which looks to the left of the '#' and after the domain.</p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229966#notes">104. Component Insertion Point</a></p>
+</li>
+</ul>
+<h2 id="105-component-lifecycle-methods"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229968#notes">105. Component Lifecycle Methods</a></h2>
+<ul>
+<li><strong>LifeCycle Methods</strong> are functions that we can define on a component that are called automatically during certain points inside of a component's lifecycle.</li>
+</ul>
+<h3 id="lifecycle-diagram">Lifecycle diagram:</h3>
+<p><img src="https://vuejs.org/images/lifecycle.png" alt="Lifecycle Diagram"></p>
+<p>N.B. A component has actually shown up on the screen when it is &quot;mounted&quot;</p>
+<h2 id="calling-actions"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10229970#notes">Calling Actions</a></h2>
+<h2 id="108-data-in-components-with-mapgetters"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10230010#notes">108. Data in Components with MapGetters</a></h2>
+<h2 id="118-image-module-design"><a href="https://www.udemy.com/course/vue-js-course/learn/lecture/10230040#content">118. Image Module Design</a></h2>
+<p><strong>State</strong></p>
+<ul>
+<li><code>images</code> -&gt; array of images fetched from Imgur API; initial value of <code>[]</code></li>
+</ul>
+<p><strong>Getters</strong></p>
+<ul>
+<li><code>allImages</code> -&gt; function that returns list of images inside of state</li>
+</ul>
+<p><strong>Mutations</strong></p>
+<ul>
+<li><code>setImages</code> -&gt; after fetchImages action makes netwrok req to Imgur API, it sould probably call this mutation in an attempt to update images stored by our state</li>
+</ul>
+<p><strong>Actions</strong></p>
+<ul>
+<li><code>fetchImages</code> -&gt; fetch all images for this user from the API</li>
+<li><code>uploadImage</code> -&gt; allow user to upload image and send it to Imgur API</li>
+</ul>
+
+    </body>
+    </html>
