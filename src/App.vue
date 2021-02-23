@@ -1,3 +1,5 @@
+
+
 <template>
   <!-- Anytime the router matches a route, it will take that component and put it right here -->
   <main>
@@ -14,7 +16,7 @@ export default {
   name: 'App',
   components: {
     AppHeader
-  }
+  },
 }
 </script>
 

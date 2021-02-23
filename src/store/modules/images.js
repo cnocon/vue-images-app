@@ -14,7 +14,8 @@ const actions = {
   async fetchImages({ commit, rootState }) {
     const { token } = rootState.auth;
     const response = await api.fetchImages(token);
-    commit('setImages', response.data);
+    console.log(response.data.mediaItems.filter(i => i.mimeType === "image/jpeg"));
+    commit('setImages', response.data.mediaItems.filter(i => i.mimeType != "video/mp4"));
   },
   async uploadImages({ rootState }, images) {
     // Get the access token

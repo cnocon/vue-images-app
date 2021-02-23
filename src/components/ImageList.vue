@@ -3,12 +3,11 @@
     <ul>
       <li v-for="image in allImages" v-bind:key="image.id">
         <img
-          v-bind:src="image.productUrl"
+          v-bind:src="image.baseUrl"
           v-bind:key="image.id"
-          v-bind:alt="image.description" />
+          v-bind:alt="image.id" />
           <p>
-            <strong>{{ image.title }}</strong><br/>
-            <i>{{ image.description }}</i>
+            <strong>{{ image.filename }}</strong>
           </p>
         </li>
     </ul>
@@ -37,16 +36,16 @@ ul {
 }
 
 li {
-  max-width: calc(25% - 2rem);
-  max-height: 350px;
+  /* max-width: calc(25% - 2rem); */
   margin: 1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 0;
-  height: 100%;
 }
 
 img {
   display: block;
+  height: 200px;
+  width: auto;
 }
 </style>
